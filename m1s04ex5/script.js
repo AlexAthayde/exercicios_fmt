@@ -3,7 +3,7 @@ let totalRuins = 0;
 let contador = 1;
 
 while (contador <= 4) {
-  resposta = parseInt(prompt(`Qual sua avaliação para a série Stranger Fings: 
+  resposta = parseInt(prompt(`Qual sua avaliação para a série Stranger Things: 
   (1) Excelente
   (2) Bom ou 
   (3) Ruim`));
