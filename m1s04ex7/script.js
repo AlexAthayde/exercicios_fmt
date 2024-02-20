@@ -1,36 +1,40 @@
-function compra(){
-    let produto, quantidade, index
-    let lista = [0, 0, 0, 0, 0]
-    let produtos = ['Hortifruti', 'Laticínios', 'Carnes', 'Peixes', 'Aves']
-    let maiorQtde = 0
-    
-    while (true) {
-        produto = prompt(`Qual produto você deseja comprar?
-        (1)Hortifruti
-        (2)Laticínios
-        (3)Carnes
-        (4)Peixes
-        (5)Aves
-        (6)Fechar pedido`)
+let produtos = ["Hortifruti", "Laticínios", "Carnes", "Peixes", "Aves"];
+let quantidades = [0, 0, 0, 0, 0];
+let maiorQP = 0;
+let index = 0;
 
-        if (produto == 1 || produto == 2 || produto == 3 || produto == 4 || produto == 5) {
-            quantidade = parseInt(prompt(`Quantos desse item?`));
-            lista[parseInt(produto) - 1] += quantidade;
-        } else if (produto == 6){
-            break;
-        } else {
-            alert("Opção inválida!");
-        }
+while (true) {
+  let produto = parseInt(prompt(`Qual produto você deseja comprar?
+  (1) Hortifruti
+  (2) Laticínios
+  (3) Carnes
+  (4) Peixes
+  (5) Aves
+  (6) Fechar pedido
+`));
 
-    }
+  if (produto < 1 || produto > 6) {
+    alert("Opção inválida! Digite um número entre 1 e 6.");
+  }
 
-    for (let i = 0; i < lista.length; i++){
-        if (lista[i] > maiorQtde){
-            maiorQtde = lista[i];
-            index = i;
-        }
-    }
-    return document.write(`Seu maior pedido foi de ${produtos[index]} com ${maiorQtde} itens.`)
+  if (produto === 6) {
+    break;
+  }
+
+  let quantidade = parseInt(prompt(`Qual a quantidade do produto?`));
+
+  if (quantidade <= 0) {
+    alert("Quantidade inválida! Digite um número maior que 0.");
+  }
+
+  quantidades[produto - 1] += quantidade;
 }
 
-compra()
+for (let i = 0; i < quantidades.length; i++) {
+  if (quantidades[i] > maiorQP) {
+    maiorQP = quantidades[i];
+    index = i;
+  }
+}
+
+alert(`Seu produto pedido com maior quantidade foi de ${produtos[index]} com ${maiorQP} itens.`);
