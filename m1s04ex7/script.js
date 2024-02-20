@@ -37,4 +37,4 @@ for (let i = 0; i < quantidades.length; i++) {
   }
 }
 
-alert(`Seu produto pedido com maior quantidade foi de ${produtos[index]} com ${maiorQP} itens.`);
+alert(`Seu produto pedido em maior quantidade foi ${produtos[index]} com ${maiorQP} itens.`);
