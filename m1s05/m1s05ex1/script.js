@@ -5,5 +5,5 @@ const prompt = require('prompt-sync')();
 // array de frutas
 const frutas = ["Abacate", "Banana", "Maça"];
 
-// exibe a fruta do array na posição 2
+// exibe a fruta do array na posição 02
 console.log(frutas[1]);
