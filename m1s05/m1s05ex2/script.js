@@ -1,18 +1,17 @@
-// prompt importa a biblioteca prompt-sync
-// instalei através do comando "npm install prompt-sync"
-const prompt = require('prompt-sync')();
+const prompt = require("prompt-sync")()
+
+const frutas = []
 
 // array de frutas
-const frutas = ["Abacate", "Banana", "Maça"];
-
-// exibe a fruta do array na posição 2
-console.log(frutas[1]);
+for(let i = 0; i < 3; i++){
+  frutas.push(prompt("Digite o nome da fruta: "));
+}
 
 // adiciona uma nova fruta ao final do array.
-frutas.push("Manga");
+frutas.push(prompt("Digite uma fruta adicional: "));
 
 // remova a primeira fruta do array.
 frutas.shift();
 
 // exibe o array com as alterações.
-console.log(frutas); 
+console.log(frutas);
