@@ -21,3 +21,7 @@ const numerosOrdenados = [...numeros];
 numerosOrdenados.sort((a, b) => a - b);
 
 console.log(`Números somados: ${numerosOrdenados.join(" - ")}.`);
+
+const pares = numeros.filter(numero => numero % 2 === 0);
+
+console.log(`Números pares: ${pares.join(" - ")}.`);
