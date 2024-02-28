@@ -10,3 +10,14 @@ for(let i = 0; i < 5; i++){
 for(let i = 0; i < 5; i++){
   console.log(`O ${i + 1}° número é ${numeros[i]}`);
 }
+
+const soma = numeros.reduce((acumulador, numeroAtual) => {
+  return acumulador + numeroAtual;
+}, 0);
+
+console.log("A soma total dos números é", soma);
+
+const numerosOrdenados = [...numeros];
+numerosOrdenados.sort((a, b) => a - b);
+
+console.log(`Números somados: ${numerosOrdenados.join(" - ")}.`);
