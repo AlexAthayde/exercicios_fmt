@@ -1,2 +1,19 @@
-const prompt = require("prompt-sync")({sigint: true});
-
+function getUserInfo() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        let user = {
+          nome: "Alex",
+          idade: 34,
+          email: "alex.avribeiro@gmail.com",
+        };
+        resolve(user);
+      }, 2000);
+    });
+  }
+  
+  async function playGetUser() {
+     let retorno = await getUserInfo();
+     console.log(retorno);
+  }
+  
+  playGetUser()
