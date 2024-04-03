@@ -19,7 +19,7 @@ const logHoraMiddleware = (req, res, next) => {
 app.use(logHoraMiddleware);
 
 app.get("/", logHoraMiddleware, function (req, res) {
-  res.send("Servidor Online!!!");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.get("/sobre", logHoraMiddleware, function (req, res) {
@@ -35,6 +35,6 @@ app.get("/produto/:id", function (req, res) {
   res.status(200).send(`Produto com id: ${id}`);
 });
 
-app.listen(3000, () => {
+app.listen(3000, function () {
   console.log("Servidor rodando na porta 3000");
 });
