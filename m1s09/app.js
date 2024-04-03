@@ -6,13 +6,17 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
 const logHoraMiddleware = (req, res, next) => {
   const horaAtual = new Date().toISOString();
   console.log(
-    `[${horaAtual}] Nova solicitação recebida para: ${req.method} ${req.originalUrl}`
-    );
-  next(); // Chamar next() para passar a solicitação para o próximo middleware
+    `[${horaAtual}] Nova solicitação recebida: ${req.method} ${req.originalUrl}`
+  );
+  next();
 };
+
+app.use(logHoraMiddleware);
 
 app.get("/", logHoraMiddleware, function (req, res) {
   res.send("Servidor Online!!!");
@@ -24,6 +28,11 @@ app.get("/sobre", logHoraMiddleware, function (req, res) {
 
 app.get("/contato", logHoraMiddleware, function (req, res) {
   res.send("Essa é o nosso contato!");
+});
+
+app.get("/produto/:id", function (req, res) {
+  const { id } = req.params;
+  res.status(200).send(`Produto com id: ${id}`);
 });
 
 app.listen(3000, () => {
